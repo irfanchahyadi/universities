@@ -79,6 +79,8 @@ def detail(row):
         st.write(f'Duration: {int(row['degree_duration'])} months')
     if row['fees_std'] > 0:
         st.write(f'Fees: €{row['fees_std']:,.0f}' + (f"({row['fees']:,.0f} {row['currency']})" if row['currency'] != 'EUR' else ''))
+    if row['app_fees_std'] > 0:
+        st.write(f'App Fees: €{row['app_fees_std']:,.0f}' + (f"({row['app_fees']:,.0f} {row['currency']})" if row['currency'] != 'EUR' else ''))
 
 
 for idx, row in filtered_df.iloc[start_idx:end_idx].iterrows():
